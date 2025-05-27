@@ -41,3 +41,20 @@ function returnSecondValue(getArray){
 }
 
 console.log(returnSecondValue(myNewArray));
+
+
+// make a function which accepts an object and prints all the values
+
+const username = {
+    personName: "Mohini",
+    age: 20,
+    address: "Vijay Nagar",
+    bestFriend: "kaustav",
+    collegeLife: "Best" 
+}
+
+function About(objectOfAbout) {
+    console.log(`My name is ${objectOfAbout.personName}, my age is ${objectOfAbout.age}, my bestfriend name is ${objectOfAbout.bestFriend} and my college life is ${objectOfAbout.collegeLife}`)
+}
+
+About(username);
