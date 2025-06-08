@@ -115,7 +115,9 @@ users[1].email;
 // hai toh -> true else false
 //console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
-// ===================================================
+// ========================================
+// OBJECT DESTRUCTURING
+// ========================================
 
 const course = {
     courseName: "js in hindi",
@@ -123,20 +125,34 @@ const course = {
     courseTeacher: "gupta ji"
 }
 
+// Traditional way to access object properties
 // course.courseTeacher;
 
+// ========================================
+// DESTRUCTURING SYNTAX
+// ========================================
+
+// Basic destructuring - extract property with same name
 const {courseTeacher} = course
+
+// Destructuring with renaming - extract property with different name
 const {courseTeacher: sir} = course
 
 console.log(courseTeacher);
 
+// ========================================
+// API CONCEPT
+// ========================================
 // apna kam kisi or ke sar pe dal dena -> API 
+
+// JSON Object Format
 // {
-//     "name": "kaustav";
-//     "college": "SGTB Khalsa College";
+//     "name": "kaustav",
+//     "college": "SGTB Khalsa College",
 //     "gradYear": "2025"
 // }
 
+// JSON Array Format
 [
     {},
     {},
