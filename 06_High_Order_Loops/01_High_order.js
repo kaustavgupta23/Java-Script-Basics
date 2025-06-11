@@ -7,7 +7,7 @@
 // [{}, {}, {}]
 
 // ================= SYNTAX =====================
-// for (const element of object) {
+// for (const iterator of object) {
 //      do something with item
 // }
 
@@ -22,6 +22,10 @@
 
 const arr = [1, 2, 3, 4, 5];
 
+for (const num of arr) {
+    console.log(num);
+}
+
 /* Expected output: 1
                     2
                     3
@@ -29,8 +33,15 @@ const arr = [1, 2, 3, 4, 5];
                     5  
 */
 
-for (const num of arr) {
-    console.log(num);
+console.log("====================================");
+
+// example 2
+
+const IPL = ["RCB", "MI", "CSK", "KKR", "SRH"];
+
+for (const element of IPL) {
+    console.log(element);
+    
 }
 
 console.log("====================================");
@@ -40,8 +51,9 @@ console.log("====================================");
 // =============================================
 
 const greetings = "Hello world!";
-for (const greet of greetings) {
-    console.log(`Each char is ${greet}`);
+
+for (const print of greetings) {
+    console.log(`Each char is ${print}`);
 }
 
 /* Expected Output: H
@@ -58,6 +70,8 @@ for (const greet of greetings) {
                     !
 */
 
+// aisa isliye print ho rha hai because ye har letter ke upar iterate krta hai
+
 console.log("====================================");
 
 // =============================================
@@ -68,6 +82,8 @@ console.log("====================================");
 // It stores pairs of information - a key and its corresponding value - and remembers the order you put them in.
 
 // NO DUPLICATE KEYS ALLOWED
+
+// ********  Map is not ITERABLE ***********
 
 // --------------------------------------
 // What is a Map?
@@ -83,7 +99,9 @@ map.set('UAE', "United Arab Emirates");
 
 console.log(map);
 
-// Iterating through Map using for...of
+// Iterating through Map using *** forof ***
+
+// breaking key and value here with square bracket [], yaha array ka destructure ho jaata hai
 for (const [key, value] of map) {
     console.log(key, '-> ', value);  
 }
@@ -116,3 +134,4 @@ console.log("Alternative - using Object.entries():");
 for (const [key, value] of Object.entries(myObject)) {
     console.log(key, '-> ', value);  
 }
+
