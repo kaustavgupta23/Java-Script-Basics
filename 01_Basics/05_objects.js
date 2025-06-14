@@ -15,6 +15,7 @@
 // SYMBOL DECLARATION AND USAGE
 // ========================================
 const mySym = Symbol("key1");
+// console.log(mySym);
 // symbol lena hai -> use define krna hai -> print krna hai
 
 // ========================================
@@ -32,26 +33,26 @@ const jsUser = {
 // ========================================
 // ACCESSING OBJECT PROPERTIES
 // ========================================
-console.log(jsUser.age);
+// console.log(jsUser.age);
 
 // ========================================
 // ACCESSING AND CHECKING THE TYPE OF SYMBOL PROPERTIES
 // ========================================
-console.log(jsUser[mySym]);
-console.log(typeof jsUser[mySym]);
+//console.log(jsUser[mySym]);
+// console.log(typeof jsUser[mySym]);
 
 // ========================================
 // MODIFYING OBJECT PROPERTIES
 // ========================================
 jsUser.location = "Bangalore"
-console.log(jsUser.location);
+// console.log(jsUser.location);
 
 // ========================================
 // OBJECT.FREEZE() - PREVENTING MODIFICATIONS
 // ========================================
-// Object.freeze(jsUser);
+Object.freeze(jsUser);
 jsUser.nameOf = "ROHAN";
-console.log(jsUser.nameOf);
+// console.log(jsUser.nameOf);
 
 // console.log(jsUser);
 

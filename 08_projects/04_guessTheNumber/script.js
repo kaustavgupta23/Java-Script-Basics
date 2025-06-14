@@ -1,36 +1,34 @@
+// Generate a random number between 1 and 100
 let randomNumber = parseInt(Math.random() * 100 + 1);
-console.log(randomNumber);
+console.log(randomNumber); // For debugging: show the random number in console
 
+// Get references to DOM elements
+const submit = document.querySelector('#subt'); // Submit button
+const userInput = document.querySelector('#guessField'); // Input field for user's guess
+const guessSlot = document.querySelector('.guesses'); // Area to display previous guesses
+const remaining = document.querySelector('.lastResult'); // Area to display remaining guesses
+const lowOrHi = document.querySelector('.lowOrHi'); // Area to display feedback (low/high/correct)
+const startOver = document.querySelector('.resultParas'); // Area to display "Start new Game" button
 
-const submit = document.querySelector('#subt');
-const userInput = document.querySelector('#guessField');
-const guessSlot = document.querySelector('.guesses');
-const remaining = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
-const startOver = document.querySelector('.resultParas');
+const p = document.createElement('p'); // Paragraph element for new game button
 
-const p = document.createElement('p');
+let prevGuess = []; // Array to store previous guesses
+let numGuess = 1; // Counter for number of guesses (starts at 1)
+let playGame = true; // Flag to control if the game is active
 
-let prevGuess = [];
-//  already guessed value ko user firse na let
-let numGuess = 1;
-// kitne number of guess vo le skta hai, 1 se 10 tak
-// 10 tak phauch ke guess btn ko disable krdenge
-
-let playGame = true;
-
+// Add event listener to submit button if game is active
 if(playGame){
     submit.addEventListener('click', function(e){
-        e.preventDefault();
-        const guess = parseInt(userInput.value);
-        console.log(guess);
-        validateGuess(guess);
+        e.preventDefault(); // Prevent form submission
+        const guess = parseInt(userInput.value); // Get user's guess as a number
+        console.log(guess); // Debug: log the guess
+        validateGuess(guess); // Validate and process the guess
     })
 }
 
+// Validate the user's guess
 function validateGuess(guess){
-    // kya value sahi ja rhi hai??
-    // kahi <1 or > 100 toh ni ja rhi
+    // Check if guess is a valid number and within range
     if(isNaN(guess)){
         alert("Please enter a valid number")
     } else if(guess < 1){
@@ -38,24 +36,22 @@ function validateGuess(guess){
     } else if(guess > 100){
         alert("Please enter a number less than 100")
     } else{
-        prevGuess.push(guess);
+        prevGuess.push(guess); // Store the guess
         if(numGuess > 10){
+            // If guesses exceed 10, end the game
             cleanupGuess(guess);
             displayMessage(`Game Over, random number was ${randomNumber}`);
             endGame();
         } else {
+            // Otherwise, process the guess
             cleanupGuess(guess);
             checkGuess(guess);
         }
     }
-
 }
 
+// Check if the guess is correct, too low, or too high
 function checkGuess(guess){
-    // need to print ki value sahi hai ya galat
-    // value sahi h ya galat
-    // low or high values toh nahi hai?
-
     if(guess === randomNumber){
         displayMessage(`Right guess`);
         endGame();
@@ -66,54 +62,41 @@ function checkGuess(guess){
     }
 }
 
+// Clean up after each guess: clear input, update guesses and remaining
 function cleanupGuess(guess){
-    // 
-    userInput.value = ''; // value clean krdo
-    guessSlot.innerHTML += `${guess}, `
-    numGuess++;
-    remaining.innerHTML = `${11 - numGuess}`;
+    userInput.value = ''; // Clear input field
+    guessSlot.innerHTML += `${guess}, ` // Show all guesses so far
+    remaining.innerHTML = `${11 - numGuess}`; // Update remaining guesses
+    numGuess++; // Increment guess counter
 }
 
+// Display a message to the user (low/high/correct/game over)
 function displayMessage(message){
-    // DOM ke sath interect krega
-    // user se message leke print krega
     lowOrHi.innerHTML = `<h2>${message}</h2>`
-
-
 }
 
+// End the game: disable input, show new game button
 function endGame(){
-    userInput.value = '' // value clean;
-    userInput.setAttribute('disabled', '')
-    p.classList.add('button')
-    p.innerHTML =  `<h2 id="newGame">Start new Game</h2>`
-    startOver.appendChild(p);
-    playGame = false;
-    newGame();
-
+    userInput.value = '' // Clear input
+    userInput.setAttribute('disabled', '') // Disable input field
+    p.classList.add('button') // Add class for styling
+    p.innerHTML =  `<h2 id="newGame">Start new Game</h2>` // Set button text
+    startOver.appendChild(p); // Add button to DOM
+    playGame = false; // Set game as inactive
+    newGame(); // Set up new game listener
 }
 
+// Set up new game: reset everything when "Start new Game" is clicked
 function newGame(){
-    // 
     const newGameButton = document.querySelector('#newGame');
     newGameButton.addEventListener('click', function(e){
-        randomNumber = parseInt(Math.random() * 100 + 1);
-        prevGuess = [];
-        numGuess = 1;
-        guessSlot.innerHTML = '';
-        remaining.innerHTML = `${11 - numGuess}`;
-        userInput.removeAttribute('disabled')
-        startOver.removeChild(p);
-
-        playGame = true;
+        randomNumber = parseInt(Math.random() * 100 + 1); // Generate new random number
+        prevGuess = []; // Reset previous guesses
+        numGuess = 1; // Reset guess counter
+        guessSlot.innerHTML = ''; // Clear guesses display
+        remaining.innerHTML = `${11 - numGuess}`; // Reset remaining guesses
+        userInput.removeAttribute('disabled') // Enable input field
+        startOver.removeChild(p); // Remove new game button
+        playGame = true; // Set game as active
     })
 }
-
-
-
-
-
-
-
-
-
