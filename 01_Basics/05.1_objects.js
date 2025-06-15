@@ -54,7 +54,7 @@ const obj4 = {4: "a", 5: "b"};
 // Wrong way - creates nested objects
 // const obj3 = {obj1, obj2};
 
-// Method 1: Object.assign()
+// =========== Method 1: Object.assign() =============
 // const obj3 = Object.assign({}, obj1, obj2);
 
 /*
