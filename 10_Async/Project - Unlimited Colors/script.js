@@ -30,35 +30,12 @@
 // document.querySelector('#stop').addEventListener('click', stopChangingColor)
 
 const randomColor = function(){
-    // const hex = '0123456789ABCEDF';
-    // let color = '#';
-    // for(let i = 0; i < 6; i++){
-
-    const hexColor = "#A3F82C";
-    const hex = hexColor.replace("#", "");
-
-    const r = hex.slice(0, 2);
-    const g = hex.slice(2, 4);
-    const b = hex.slice(4, 6);
-
-    const red = parseInt(r, 16);    //  163
-    const green = parseInt(g, 16);  //  248
-    const blue = parseInt(b, 16);   //  44
-
-    function hexToRGB(hexColor) {
-    const hex = hexColor.replace("#", "");
-    const r = parseInt(hex.slice(0, 2), 16);
-    const g = parseInt(hex.slice(2, 4), 16);
-    const b = parseInt(hex.slice(4, 6), 16);
-    return { r, g, b };
-    }
-
-
-
-        /*
-        // color = color + hex[Math.floor(Math.random() * 16)];
+    const hex = '0123456789ABCEDF';
+    let color = '#';
+    for(let i = 0; i < 6; i++){
+        color = color + hex[Math.floor(Math.random() * 16)];
         // maths.floor -> takes a decimal number and rounds it down to the nearest whole number
-         e.g : 
+        /* e.g : 
             Math.floor(4.9)    // 👉 4
             Math.floor(7.1)    // 👉 7
             Math.floor(3.999)  // 👉 3
@@ -73,9 +50,6 @@ const randomColor = function(){
             Value:  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
 
         */
-
-
-        
     }
     return color;
 }
