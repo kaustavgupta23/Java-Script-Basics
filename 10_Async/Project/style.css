@@ -1,0 +1,62 @@
+/* Table Styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  background-color: #2b2b2b;
+  color: #eaeaea;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* Header cells */
+th {
+  background-color: #1f1f1f;
+  font-weight: 600;
+}
+
+/* Project Container */
+.project {
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Key Display Box */
+#insert {
+  background-color: #1e1e1e;
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-width: 350px;
+  min-height: 150px;
+}
+
+/* Reset Button */
+#resetBtn {
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#resetBtn:hover {
+  background-color: #555;
+}
