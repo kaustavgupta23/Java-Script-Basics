@@ -1,0 +1,105 @@
+/* api.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+input#github_id {
+    padding: 0.6rem;
+    width: 250px;
+    height: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #1e1e1e;
+    color: #fff;
+    outline: none;
+}
+
+button#api_card {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 2rem;
+    height: 40px;
+}
+
+button#api_card:hover {
+    background-color: #0056b3;
+}
+
+#cardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid #007bff;
+}
+
+.card h4, .card p {
+    margin: 0.5rem 0;
+    color: #ddd;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.card a:hover {
+    color: #ffffff;
+}
+
+a {
+  color: inherit;         /* Makes the link the same color as surrounding text */
+  text-decoration: none;
+  /* color: #ff6f61;   */
+  /* Removes underline */
+}
+
+/* Optional: Add hover effect */
+a:hover {
+  text-decoration: underline;
+  color: #ff6f61; 
+  /* or any color you like on hover */
+}
+
