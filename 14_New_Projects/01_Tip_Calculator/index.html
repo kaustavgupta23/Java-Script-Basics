@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="app-title">Tip Calculator</h1>
+    
+    <div class="calculator-container">
+        <div class="input-group">
+            <label class="input-label">Bill Amount</label>
+            <input type="number" placeholder="Rs." autocomplete="off" id="billAmount">
+        </div>
+        
+        <div class="input-group">
+            <label class="input-label">Tip Percentage</label>
+            <input type="number" placeholder="%" autocomplete="off" id="tipPercentage">
+        </div>
+        
+        <button class="calculate-btn" id="calc_Tip">Calculate Tip</button>
+        
+        <div id="total"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
